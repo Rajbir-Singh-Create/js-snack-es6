@@ -59,6 +59,7 @@ function powerRandom(power) {
     // console.log(alimentazione);
 }
 
+
 //* Snack 2
 console.log("Snack 2");
 
@@ -88,3 +89,52 @@ for (let index = 0; index < stringArr.length; index++) {
 console.log(stringArr);
 console.log(formattedStringArr);
 
+
+//* Snack 3
+console.log("Snack 3");
+
+const animalName = ["Leone", "gallina", "cane"];
+const speciesName = ["fasianidi", "canidi", "felidi"];
+const animalClassName = ["mammiferi", "felini", "uccelli"];
+
+const animals = [];
+
+const mammalAnimals = [];
+
+for (let index = 0; index < 4; index++) {
+    animals.push({
+        nome: animalRandom(animalName),
+        famiglia: speciesRandom(speciesName),
+        classe: classRandom(animalClassName)
+    });
+}
+console.log(animals)
+
+for (let index = 0; index < animals.length; index++) {
+    const animal = animals[index];
+
+    if (animal.classe === "mammiferi"){
+        mammalAnimals.push(animal);
+    }
+}
+console.log(mammalAnimals)
+
+// Generazione randomica dei valori
+function animalRandom(animal) {
+    const animalIndex = Math.floor(Math.random() * animalName.length);
+    return animal[animalIndex];
+}
+
+function speciesRandom(species) {
+    const speciesIndex = Math.floor(Math.random() * speciesName.length);
+    return species[speciesIndex];
+}
+
+function classRandom(className) {
+    const classIndex = Math.floor(Math.random() * animalClassName.length);
+    return className[classIndex];
+}
+// TODO: utilizzare meglio le funzioni di generazione randomica
+
+//* Snack 4
+console.log("Snack 4");
