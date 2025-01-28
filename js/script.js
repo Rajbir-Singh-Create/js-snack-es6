@@ -13,9 +13,9 @@ let alternativePower = [];
 // Creazione dell'array composto da 10 automobili
 for (let index = 0; index < 10; index++) {
     cars.push({
-        brand: brandRandom(carBrand),
-        model: modelRandom(carModel),
-        power: powerRandom(carPower)
+        brand: generateRandom(carBrand, carBrand),
+        model: generateRandom(carModel, carModel),
+        power: generateRandom(carPower, carPower)
     })
 }
 
@@ -41,22 +41,10 @@ console.log("Automobili a diesel:", diesel);
 console.log("Automobili ad alimentazione alternativa:", alternativePower);
 
 // Generazione randomica dei valori
-function brandRandom(brand) {
-    const marcaIndex = Math.floor(Math.random() * carBrand.length);
-    return brand[marcaIndex];
+function generateRandom(element1, element2) {
+    const elementIndex = Math.floor(Math.random() * element2.length);
+    return element1[elementIndex];
     // console.log(marca);
-}
-
-function modelRandom(model) {
-    const modelloIndex = Math.floor(Math.random() * carModel.length);
-    return model[modelloIndex];
-    // console.log(modello);
-}
-
-function powerRandom(power) {
-    const alimentazioneIndex = Math.floor(Math.random() * carPower.length);
-    return power[alimentazioneIndex];
-    // console.log(alimentazione);
 }
 
 
@@ -103,9 +91,9 @@ const mammalAnimals = [];
 
 for (let index = 0; index < 4; index++) {
     animals.push({
-        nome: animalRandom(animalName),
-        famiglia: speciesRandom(speciesName),
-        classe: classRandom(animalClassName)
+        nome: generateRandom(animalName, animalName),
+        famiglia: generateRandom(speciesName, speciesName),
+        classe: generateRandom(animalClassName, animalClassName)
     });
 }
 console.log(animals)
@@ -119,22 +107,7 @@ for (let index = 0; index < animals.length; index++) {
 }
 console.log(mammalAnimals)
 
-// Generazione randomica dei valori
-function animalRandom(animal) {
-    const animalIndex = Math.floor(Math.random() * animalName.length);
-    return animal[animalIndex];
-}
-
-function speciesRandom(species) {
-    const speciesIndex = Math.floor(Math.random() * speciesName.length);
-    return species[speciesIndex];
-}
-
-function classRandom(className) {
-    const classIndex = Math.floor(Math.random() * animalClassName.length);
-    return className[classIndex];
-}
-// TODO: utilizzare meglio le funzioni di generazione randomica
 
 //* Snack 4
 console.log("Snack 4");
+
