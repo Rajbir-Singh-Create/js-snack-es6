@@ -13,9 +13,9 @@ let alternativePower = [];
 // Creazione dell'array composto da 10 automobili
 for (let index = 0; index < 10; index++) {
     cars.push({
-        brand: generateRandom(carBrand, carBrand),
-        model: generateRandom(carModel, carModel),
-        power: generateRandom(carPower, carPower)
+        brand: generateRandom(carBrand),
+        model: generateRandom(carModel),
+        power: generateRandom(carPower)
     })
 }
 
@@ -39,13 +39,6 @@ for (let index = 0; index < cars.length; index++) {
 console.log("Automobili a benzina:", petrol);
 console.log("Automobili a diesel:", diesel);
 console.log("Automobili ad alimentazione alternativa:", alternativePower);
-
-// Generazione randomica dei valori
-function generateRandom(element1, element2) {
-    const elementIndex = Math.floor(Math.random() * element2.length);
-    return element1[elementIndex];
-    // console.log(marca);
-}
 
 
 //* Snack 2
@@ -91,9 +84,9 @@ const mammalAnimals = [];
 
 for (let index = 0; index < 4; index++) {
     animals.push({
-        nome: generateRandom(animalName, animalName),
-        famiglia: generateRandom(speciesName, speciesName),
-        classe: generateRandom(animalClassName, animalClassName)
+        nome: generateRandom(animalName),
+        famiglia: generateRandom(speciesName),
+        classe: generateRandom(animalClassName)
     });
 }
 console.log(animals)
@@ -105,9 +98,56 @@ for (let index = 0; index < animals.length; index++) {
         mammalAnimals.push(animal);
     }
 }
-console.log(mammalAnimals)
+console.log(mammalAnimals);
 
 
 //* Snack 4
 console.log("Snack 4");
 
+const personName = ["Damiano", "Fabio", "Raj", "Lorenzo"];
+const personSurname = ["Rossi", "Bianchi", "Verdi"];
+const personAge = [];
+
+const people = [];
+const peopleNewArr = [];
+
+// Generazione random dell'età
+for (let index = 0; index < personName.length; index++) {
+    const age = Math.round(Math.random()*100);
+    personAge.push(age);
+}
+
+// Popolamento dell'array people
+for (let index = 0; index < personName.length; index++) {
+    people.push({
+        nome: generateRandom(personName),
+        cognome: generateRandom(personSurname),
+        age: generateRandom(personAge)
+    });
+}
+
+for (let index = 0; index < people.length; index++) {
+    const person = people[index];
+    
+    let canDrive;
+    if (person.age < 18){
+        canDrive = "non può guidare";
+    } else {
+        canDrive = "può guidare";
+    }
+
+    const phrase = `${person.nome} ${person.cognome} ${canDrive}`;
+
+    peopleNewArr.push(phrase);
+}
+
+console.log(people);
+console.log(peopleNewArr);
+
+
+// Generazione randomica dei valori
+function generateRandom(array) {
+    const elementIndex = Math.floor(Math.random() * array.length);
+    return array[elementIndex];
+    // console.log(marca);
+}
