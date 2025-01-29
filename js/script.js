@@ -24,8 +24,11 @@ console.log(cars);
 // Divido le automobili in 3 array separati: 
 // nel primo array solo le auto a benzina, nel secondo solo le auto a diesel, nel terzo il resto delle auto.
 for (let index = 0; index < cars.length; index++) {
+    // Prendo l'elemento auto
     const car = cars[index];
 
+    // Controllo sulla proprietà dell'auto per determinare l'alimentazione
+    // e inserirlo nell'array corretto
     if (car.power === "benzina") {
         petrol.push(car);
     } else if (car.power === "diesel") {
@@ -126,6 +129,7 @@ for (let index = 0; index < personName.length; index++) {
     });
 }
 
+// Popolamento dell'array peopleNewArr con la stringa per ogni persona
 for (let index = 0; index < people.length; index++) {
     const person = people[index];
     
@@ -147,7 +151,6 @@ console.log(peopleNewArr);
 
 // Generazione randomica dei valori
 function generateRandom(array) {
-    const elementIndex = Math.floor(Math.random() * array.length);
-    return array[elementIndex];
-    // console.log(marca);
+    const element = Math.floor(Math.random() * array.length);
+    return array[element];
 }
